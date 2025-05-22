@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Multi-keyword Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #d2f0db, #e4f9ff);
+        }
+
+        .header {
+            background-color: #2a6f37;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .login-box {
+            width: 380px;
+            background: white;
+            margin: 60px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #2a6f37;
+        }
+
+        .login-box input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-box button {
+            background-color: #2a6f37;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            background-color: #24853e;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        .signup-links {
+            margin-top: 20px;
+        }
+
+        .signup-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2a6f37;
+            font-weight: bold;
+        }
+
+        .signup-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🔐 Secure Multi-keyword Search System</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/signup/user">Data Owner</a>
+            <a href="/signup/user">Data User</a>
+            <a href="/signup/admin">Server Admin</a>
+            <a href="/signup/auth">New Registration</a>
+        </nav>
+    </div>
+
+    <div class="login-box">
+        <h2>Login</h2>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="signup-links">
+            <p>Don't have an account? Choose a role to sign up:</p>
+            <a href="/signup/user">➕ User Signup</a>
+            <a href="/signup/admin">🛠 Admin Signup</a>
+            <a href="/signup/auth">🔐 Authenticator Signup</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Access Requests</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #ede7f6;
+            padding: 40px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1b9a45;
+            margin-bottom: 25px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e5f5e6;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-left: 5px solid #24aa51;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        strong {
+            color: #148c24;
+        }
+
+        p {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: #1b9a30;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📩 File Access Requests</h2>
+
+        {% if requests %}
+        <ul>
+            {% for req in requests %}
+            <li>
+                <strong>{{ req.username }}</strong> requested <strong>{{ req.filename }}</strong> → 
+                Status: <strong>{{ req.status }}</strong>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No access requests found.</p>
+        {% endif %}
+
+        <a href="/auth">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

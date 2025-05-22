@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e8f5e9;
+            color: #0333;
+        }
+
+        .navbar {
+            background-color: #2e7d32;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar span {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 24px;
+        }
+
+        .dashboard-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #2e7d32;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+            color: #1b5e20;
+        }
+
+        .icon {
+            margin-right: 18px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>👤 Admin Dashboard</h1>
+        <a href="/logout" style="color: white; font-weight: bold;">⏻ Logout</a>
+    </header>
+
+
+    <div class="dashboard-container">
+        <h2>Welcome, {{ session['username'].capitalize() }}</h2>
+        <ul>
+            <li><a href="/admin/upload">📤 Upload File</a></li>
+            <li><a href="/admin/encrypt">🔐 Encrypt Files</a></li>
+            <li><a href="/admin/decrypt">📂 View Decrypted Text</a></li>
+            <li><a href="/admin/requests">📥 View Access Requests</a></li>
+            <li><a href="/admin/encrypted-view">💬 View Encrypted text</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

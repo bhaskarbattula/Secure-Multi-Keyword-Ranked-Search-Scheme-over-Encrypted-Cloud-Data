@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #d4f4dc, #e8fdf4);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 100px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: #2c6e49;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #2c6e49;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #2c6e49;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #215c3a;
+        }
+
+        .back-link {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .back-link a {
+            color: #2c6e49;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>User Signup</h2>
+    <form method="post" action="/user/register">
+        <label for="username">Username</label>
+        <input type="text" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Create Account</button>
+    </form>
+    <div class="back-link">
+        <a href="/">← Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<!-- dashboard_auth.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authenticator Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f1f8e9;
+            color: #333;
+        }
+        header {
+            background-color: #558b2f;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 24px;
+        }
+        .dashboard-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #558b2f;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 15px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #558b2f;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #33691e;
+        }
+        a .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔒 Authenticator Dashboard</h1>
+        <a href="/logout" style="color: white; font-weight: bold;">⏻ Logout</a>
+    </header>
+
+    <div class="dashboard-container">
+        <h2>Welcome, {{ session.username }}</h2>
+        <ul>
+            <li><a href="/auth/users"><span class="emoji">👥</span>View All Users</a></li>
+            <li><a href="/auth/admins"><span class="emoji">🧑‍💼</span>View All Admins</a></li>
+            <li><a href="/auth/files"><span class="emoji">📁</span>View Uploaded Files</a></li>
+            <li><a href="/auth/requests"><span class="emoji">📨</span>View Access Requests</a></li>
+        </ul>
+    </div>
+</body>
+</html>

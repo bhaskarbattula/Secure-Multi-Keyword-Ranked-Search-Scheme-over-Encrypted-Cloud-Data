@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Approved Files</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #e8f5e9;
+            padding: 40px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 25px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9fbe7;
+            margin-bottom: 12px;
+            padding: 12px 20px;
+            border-left: 5px solid #43a047;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a.download-btn {
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        a.download-btn:hover {
+            background-color: #1b5e20;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #1565c0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .no-files {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>✅ Approved Files for Download</h2>
+
+    {% if approved_files %}
+    <ul>
+        {% for file in approved_files %}
+        <li>
+            📄 {{ file }}
+            <a href="/user/download/{{ file }}" class="download-btn">⬇️ Download</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="no-files">No files approved for download yet.</p>
+    {% endif %}
+
+    <a href="/user" class="back-link">← Back to Dashboard</a>
+</div>
+</body>
+</html>

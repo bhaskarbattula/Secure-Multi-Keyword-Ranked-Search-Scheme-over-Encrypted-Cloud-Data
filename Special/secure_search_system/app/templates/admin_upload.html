@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📤 Upload File | Admin</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #e0f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h2 {
+            color: #00796b;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            width: 100%;
+            border: 2px dashed #80cbc4;
+            background: #f1fdfd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: #00796b;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #004d40;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📤 Upload File </h2>
+        <form method="POST" action="/admin/upload" enctype="multipart/form-data">
+            <br><label>Select a text file to upload:</label>
+            <input type="file" name="document" required>
+            <button type="submit">Upload</button>
+        </form>
+            
+        <a class="back-link" href="/admin">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

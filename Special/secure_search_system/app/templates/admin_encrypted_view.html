@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Encrypted File</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+            padding: 40px;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+        form {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #2e7d32;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #1b5e20;
+        }
+        textarea {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-family: monospace;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #1565c0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📂 View Encrypted File Content</h2>
+
+        <form method="POST">
+            <label for="filename">Select an encrypted file:</label>
+            <select name="filename" required>
+                {% for f in files %}
+                    <option value="{{ f }}">{{ f }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">View Encrypted Content</button>
+        </form>
+
+        {% if content %}
+            <h3>Encrypted Content of <em>{{ file }}</em></h3>
+            <textarea rows="12" readonly>{{ content }}</textarea>
+        {% endif %}
+
+        <a href="/admin">← Back to Admin Dashboard</a>
+    </div>
+</body>
+</html>

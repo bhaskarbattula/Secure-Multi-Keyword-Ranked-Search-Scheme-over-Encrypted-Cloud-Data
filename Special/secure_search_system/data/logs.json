@@ -1,0 +1,41 @@
+{
+    "files": [
+        {
+            "filename": "one.txt",
+            "uploaded_by": "admin1"
+        },
+        {
+            "filename": "two.txt",
+            "uploaded_by": "admin1"
+        },
+        {
+            "filename": "three.txt",
+            "uploaded_by": "admin1"
+        }
+    ],
+    "users": [
+        {
+            "username": "argb",
+            "role": "user"
+        },
+        {
+            "username": "user1",
+            "role": "user"
+        }
+    ],
+    "requests": [
+        {
+            "username": "user1",
+            "filename": "three.txt",
+            "status": "approved",
+            "request_time": "2025-04-29T11:45:06.091699",
+            "approved_by": "admin1",
+            "approval_time": "2025-04-29T11:45:43.658460"
+        }
+    ],
+    "batch_keys": {
+        "2025-04-29T11:30:33.004847": "z6nepDNs11ukXKnjZJlWPrOq1ERXouZAXncruiQ8NHw=",
+        "2025-04-30T10:33:04.349448": "6F7LNQ9zsQ-d3E_IfQNkKkibIAkV1djulp0ubXv4K_A=",
+        "2025-05-22T11:00:58.021970": "YFzemTLA1_kEs3YuqBbR9naYJUxxtdGBK5RKs50DPS8="
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "admins": [
+        {
+            "username": "admin1",
+            "password": "adminpass"
+        },
+        {
+            "username": "Anyone",
+            "password": "12345678"
+        }
+    ],
+    "users": [
+        {
+            "username": "user1",
+            "password": "userpass"
+        }
+    ],
+    "auths": [
+        {
+            "username": "auth1",
+            "password": "authpass"
+        }
+    ]
+}

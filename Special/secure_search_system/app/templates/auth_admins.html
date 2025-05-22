@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered Users & Admins</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #e3f2fd;
+            padding: 40px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1976d2;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .section {
+            background: #f7f9fc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.03);
+        }
+
+        h3 {
+            color: #0d47a1;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            background: #e3f2fd;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #1565c0;
+            font-weight: 500;
+        }
+
+        p {
+            font-style: italic;
+            color: #757575;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #1565c0;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>👥 All Registered Accounts</h2>
+
+        <div class="grid">
+            <div class="section">
+                <h3>🛠 Admins</h3>
+                {% if admins %}
+                <ul>
+                    {% for user in admins %}
+                        <li>{{ user.username }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No admins found.</p>
+                {% endif %}
+            </div>
+            </div>
+        </div

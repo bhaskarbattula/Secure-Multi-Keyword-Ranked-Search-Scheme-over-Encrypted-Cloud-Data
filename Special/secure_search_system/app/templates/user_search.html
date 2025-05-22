@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Documents</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+            padding: 40px;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #0277bd;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        input[type="text"], input[name="keywords"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #01579b;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #2e7d32;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            background: #f9fbe7;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #cddc39;
+        }
+        form[action="/user/request"] {
+            display: inline;
+            margin-left: 15px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #1565c0;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🔍 Search Documents</h2>
+        <form method="POST">
+            <input name="keywords" required placeholder="Enter keywords">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if results %}
+            <h3>Top Results:</h3>
+            <ul>
+            {% for file, score in results %}
+                <li>
+                    <span>{{ file }} — <strong>Score:</strong> {{ "%.2f"|format(score) }}</span>
+                    <form method="POST" action="/user/request">
+                        <input type="hidden" name="filename" value="{{ file }}">
+                        <button type="submit">Request Access</button>
+                    </form>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+        <a href="/user">← Back</a>
+    </div>
+</body>
+</html>
