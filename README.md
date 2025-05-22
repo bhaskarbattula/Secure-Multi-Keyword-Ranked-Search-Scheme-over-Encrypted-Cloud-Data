@@ -2,9 +2,10 @@
 
 This project implements a **Secure and Dynamic Multi-Keyword Ranked Search Scheme** for encrypted documents stored on a cloud platform. It enables secure data storage, encrypted keyword-based search, and privacy-preserving access control, inspired by research from IEEE TPDS.
 
+
 ## 📁 Project Structure
 
-secure_search_system/
+<pre><code>secure_search_system/
 │
 ├── app/
 │ ├── routes/ # Flask route handlers
@@ -20,10 +21,9 @@ secure_search_system/
 │ ├── index_tree.pkl # Encrypted search tree
 │ └── vectorizer.pkl # TF-IDF vectorizer object
 │
-├── static/ # Optional CSS, JS, etc.
 ├── run.py # Entry point to launch Flask app
 ├── requirements.txt # Dependencies
-└── README.md # This file
+└── README.md # This file</code></pre>
 
 
 ---
@@ -38,12 +38,11 @@ secure_search_system/
 - 🔄 **Dynamic Indexing**: Uses a tree-based structure over TF-IDF vectors for ranked retrieval.
 
 ---
-
+---
 ## 🔧 How to Run
 
-### 1. Clone the Repository
+1. Clone the Repository
 
-```bash
 git clone https://github.com/your-username/secure_search_system.git
 cd secure_search_system
 
@@ -58,7 +57,7 @@ python run.py
 4. Open in Browser
 Visit: http://127.0.0.1:5000
 
-
+---
 ## 👥 User Roles
 Admin: Uploads, encrypts, and manages files. Approves user requests.
 
